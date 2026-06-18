@@ -1,0 +1,43 @@
+---
+// 6. Pricing — PRO plan
+
+const checkIcon = (color: string) => `
+  <svg viewBox="0 0 24 24" fill="none" stroke="${color}" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+    <polyline points="20 6 9 17 4 12"/>
+  </svg>
+`;
+const proFeatures = [
+  'QR code dédié',
+  'Menu illimité',
+  '1 établissement',
+  'Mises à jour en temps réel',
+];
+---
+
+<section class="pricing section-pad" id="pricing">
+  <div class="container">
+    <div class="section-head center reveal">
+      <span class="eyebrow">Tarifs</span>
+      <h2 class="section-title">Simple, transparent, <i>sans surprise.</i></h2>
+      <p class="section-sub">Un seul plan, tout inclus. Sans engagement.</p>
+    </div>
+
+    <div class="price-grid single">
+      <!-- PRO -->
+      <div class="price-card reveal">
+        <div class="plan">PRO</div>
+        <div class="amount">10€<span> HT/mois</span></div>
+        <div class="tag">Tout ce qu'il vous faut.</div>
+        <ul>
+          {proFeatures.map((f) => (
+            <li>
+              <Fragment set:html={checkIcon('#1A1A1A')} />
+              {f}
+            </li>
+          ))}
+        </ul>
+        <a href="#cta" class="btn btn-primary">Commencer</a>
+      </div>
+    </div>
+  </div>
+</section>

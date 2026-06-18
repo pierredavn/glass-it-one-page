@@ -1,0 +1,93 @@
+---
+// 5. Demo — dark section with iPhone-style menu preview
+
+const dishes = [
+  {
+    name: 'Burrata des Pouilles',
+    price: '14€',
+    desc: "Tomates anciennes, basilic, huile d'olive de Toscane.",
+    img: 'https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=200&q=80',
+  },
+  {
+    name: 'Risotto aux cèpes',
+    price: '22€',
+    desc: 'Arborio Carnaroli, cèpes frais, parmesan 24 mois.',
+    img: 'https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=200&q=80',
+  },
+  {
+    name: 'Tartare au couteau',
+    price: '19€',
+    desc: 'Bœuf Black Angus, câpres, échalotes, jaune confit.',
+    img: 'https://images.unsplash.com/photo-1565958011703-44f9829ba187?w=200&q=80',
+  },
+];
+---
+
+<section class="demo section-pad" id="demo">
+  <div class="container">
+    <div class="demo-grid">
+      <div class="demo-side reveal">
+        <span class="eyebrow">Démonstration</span>
+        <h2 class="section-title">Vos clients <i>voient ça.</i></h2>
+        <p class="section-sub">Une expérience pensée comme une vitrine — plus jamais comme une feuille A4.</p>
+        <ol class="demo-bullets">
+          <li><span class="bnum">1</span><span>Le client scanne le QR sur la table.</span></li>
+          <li><span class="bnum">2</span><span>Votre menu s'ouvre. Photos, descriptions, prix.</span></li>
+          <li><span class="bnum">3</span><span>Il commande, vous gardez la main sur le service.</span></li>
+        </ol>
+      </div>
+
+      <div class="phone-wrap reveal" data-delay="2">
+        <div class="phone" aria-label="Aperçu du menu Glass It">
+          <div class="phone-screen">
+            <div class="phone-status">
+              <span>21:42</span>
+              <span class="icons"><span></span><span></span><span></span></span>
+            </div>
+
+            <div class="phone-cover">
+              <div class="phone-restaurant">
+                <div>
+                  <div class="name">Café des Arts</div>
+                  <div class="meta">
+                    <span class="open"><i></i>Ouvert</span>
+                    <span>·</span>
+                    <span>Lyon 2e</span>
+                  </div>
+                </div>
+                <div class="heart">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#1A1A1A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+                  </svg>
+                </div>
+              </div>
+            </div>
+
+            <div class="phone-tabs">
+              <div class="phone-tab">Tout</div>
+              <div class="phone-tab active">Plats</div>
+              <div class="phone-tab">Boissons</div>
+              <div class="phone-tab">Desserts</div>
+              <div class="phone-tab">Vins</div>
+            </div>
+
+            <div class="phone-items">
+              {dishes.map((d) => (
+                <div class="menu-item">
+                  <div class="thumb" style={`background-image:url('${d.img}')`}></div>
+                  <div class="info">
+                    <div class="row1">
+                      <h4>{d.name}</h4>
+                      <span class="price">{d.price}</span>
+                    </div>
+                    <p>{d.desc}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

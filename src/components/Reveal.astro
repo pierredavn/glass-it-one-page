@@ -1,0 +1,26 @@
+---
+/**
+ * Client-side reveal-on-scroll.
+ *
+ * Any element with class `.reveal` fades in + slides up as it enters
+ * the viewport. Add `data-delay="1"` (or 2 / 3 / 4) to stagger siblings.
+ *
+ * Mount once near the bottom of <body> (or anywhere) — the script is
+ * scoped per page by Astro.
+ */
+---
+
+<script>
+  const io = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((e) => {
+        if (e.isIntersecting) {
+          e.target.classList.add('in');
+          io.unobserve(e.target);
+        }
+      });
+    },
+    { threshold: 0.12, rootMargin: '0px 0px -40px 0px' }
+  );
+  document.querySelectorAll('.reveal').forEach((el) => io.observe(el));
+</script>

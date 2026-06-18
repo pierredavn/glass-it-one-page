@@ -1,0 +1,56 @@
+---
+// 7. Example menus — clickable cards that open real client menus in a new tab.
+// Data lives in src/data/menus.ts — edit there to add / reorder restaurants.
+
+import { showcaseMenus } from '../data/menus';
+---
+
+<section class="showcase section-pad" id="stories">
+  <div class="container">
+    <div class="section-head center reveal">
+      <span class="eyebrow">Exemples</span>
+      <h2 class="section-title">Des menus déjà <i>en ligne.</i></h2>
+      <p style="margin-top:18px;font-size:18px;color:var(--ink-2);max-width:560px;margin-left:auto;margin-right:auto;">
+        Cliquez sur une carte pour ouvrir le vrai menu numérique de l'un de nos clients.
+      </p>
+    </div>
+
+    <div class="menu-grid">
+      {showcaseMenus.map((menu, i) => (
+        <a
+          class="menu-card reveal"
+          data-delay={((i % 3) + 1).toString()}
+          href={menu.href}
+          target="_blank"
+          rel="noopener"
+        >
+          <div class="cover" style={`background-image:url('${menu.image}')`}></div>
+          <span class="badge"><span class="live"></span>Ouvert</span>
+          <div class="info">
+            <div>
+              <h3>
+                {menu.name}
+                {menu.nameItalic && <> <i>{menu.nameItalic}</i></>}
+              </h3>
+              <div class="meta">
+                <span>{menu.city}</span>
+                <span class="dot"></span>
+                <span>{menu.cuisine}</span>
+              </div>
+            </div>
+            <span class="go" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="7" y1="17" x2="17" y2="7" />
+                <polyline points="7 7 17 7 17 17" />
+              </svg>
+            </span>
+          </div>
+        </a>
+      ))}
+    </div>
+
+    <p class="more reveal">
+      Plus de 200 menus déjà en ligne. <a href="#cta">Rejoignez-les →</a>
+    </p>
+  </div>
+</section>
