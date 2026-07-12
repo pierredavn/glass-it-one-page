@@ -29,7 +29,7 @@ export const showcaseMenus: ShowcaseMenu[] = [
     city: 'Lyon 2ᵉ',
     cuisine: 'Bistrot',
     image: 'https://images.unsplash.com/photo-1559339352-11d035aa65de?w=900&q=80',
-    href: 'https://menu.glass-it.fr/cafe-des-arts',
+    href: 'https://glass-it.vercel.app/cafe-des-arts',
   },
   {
     name: 'Brasserie',
@@ -37,7 +37,7 @@ export const showcaseMenus: ShowcaseMenu[] = [
     city: 'Paris 11ᵉ',
     cuisine: 'Brasserie',
     image: 'https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=900&q=80',
-    href: 'https://menu.glass-it.fr/brasserie-josephine',
+    href: 'https://glass-it.vercel.app/brasserie-josephine',
   },
   {
     name: 'Rooftop',
@@ -45,7 +45,7 @@ export const showcaseMenus: ShowcaseMenu[] = [
     city: 'Marseille',
     cuisine: 'Cocktails',
     image: 'https://images.unsplash.com/photo-1467003909585-2f8a72700288?w=900&q=80',
-    href: 'https://menu.glass-it.fr/rooftop-42',
+    href: 'https://glass-it.vercel.app/rooftop-42',
   },
   {
     name: "L'",
@@ -53,7 +53,7 @@ export const showcaseMenus: ShowcaseMenu[] = [
     city: 'Bordeaux',
     cuisine: 'Gastronomique',
     image: 'https://images.unsplash.com/photo-1552566626-52f8b828add9?w=900&q=80',
-    href: 'https://menu.glass-it.fr/latelier',
+    href: 'https://glass-it.vercel.app/latelier',
   },
   {
     name: 'Café',
@@ -61,7 +61,7 @@ export const showcaseMenus: ShowcaseMenu[] = [
     city: 'Nantes',
     cuisine: 'Café · Brunch',
     image: 'https://images.unsplash.com/photo-1554118811-1e0d58224f24?w=900&q=80',
-    href: 'https://menu.glass-it.fr/cafe-miroir',
+    href: 'https://glass-it.vercel.app/cafe-miroir',
   },
   {
     name: 'Le',
@@ -69,6 +69,6 @@ export const showcaseMenus: ShowcaseMenu[] = [
     city: 'Strasbourg',
     cuisine: 'Bar à vins',
     image: 'https://images.unsplash.com/photo-1508424757105-b6d5ad9329d0?w=900&q=80',
-    href: 'https://menu.glass-it.fr/le-comptoir',
+    href: 'https://glass-it.vercel.app/le-comptoir',
   },
 ];
