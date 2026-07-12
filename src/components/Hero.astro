@@ -1,5 +1,6 @@
 ---
 // 1. Hero — full-bleed photo, glass pill, headline, CTAs, floating glass cards
+import { REGISTER_URL } from '../urls';
 ---
 
 <section class="hero" data-screen-label="01 Hero">
@@ -46,14 +47,14 @@
 
   <div class="hero-inner">
     <span class="pill"><span class="dot"></span>Nouveau · Menu numérique</span>
-    <h1>Le menu qui<br />donne faim, <i>avant</i><br />même d'arriver.</h1>
+    <h1>Le menu qui<br />donne faim, avant<br />même d'arriver.</h1>
     <p class="lead">
       Glass It transforme la carte de votre restaurant en expérience numérique premium,
       accessible en 3 secondes via QR code.
     </p>
     <div class="hero-ctas">
-      <a href="#cta" class="btn btn-primary">
-        Essayer gratuitement
+      <a href={REGISTER_URL} class="btn btn-primary">
+        Créer mon menu
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
           <line x1="5" y1="12" x2="19" y2="12" />
           <polyline points="12 5 19 12 12 19" />

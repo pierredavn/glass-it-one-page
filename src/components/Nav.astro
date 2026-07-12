@@ -1,5 +1,6 @@
 ---
 // Top floating glass nav
+import { REGISTER_URL, LOGIN_URL } from '../urls';
 ---
 
 <div class="nav-wrap">
@@ -11,8 +12,8 @@
       <li><a href="#pricing">Tarifs</a></li>
     </ul>
     <div class="nav-actions">
-      <a class="nav-login" href="#login">Se connecter</a>
-      <a class="btn btn-primary nav-cta" href="#cta">Commencer</a>
+      <a class="nav-login" href={LOGIN_URL}>Se connecter</a>
+      <a class="btn btn-primary nav-cta" href={REGISTER_URL}>Commencer</a>
     </div>
   </nav>
 </div>
