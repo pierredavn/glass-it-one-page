@@ -598,6 +598,18 @@ section { position: relative; }
 .price-card.pro li { color: rgba(255, 255, 255, 0.88); }
 .price-card .btn { width: 100%; justify-content: center; margin-top: auto; }
 .price-card.pro .btn-primary { background: #fff; color: #1A1A1A; }
+.price-card .amount.coming-soon-price {
+  font-size: 34px; letter-spacing: 0.01em;
+}
+.price-card.pro .amount.coming-soon-price { color: rgba(255, 255, 255, 0.85); }
+.btn-soon {
+  margin-top: auto;
+  background: rgba(255, 255, 255, 0.12);
+  color: rgba(255, 255, 255, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  cursor: not-allowed;
+  pointer-events: none;
+}
 .recommended-badge {
   position: absolute; top: -12px; right: 26px;
   background: #fff; color: #1A1A1A;

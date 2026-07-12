@@ -27,8 +27,6 @@ const plans = [
   },
   {
     name: 'Pro',
-    price: '15€',
-    period: 'HT/mois',
     tag: 'La commande à table en plus.',
     features: [
       'Tout le plan Premium',
@@ -36,8 +34,10 @@ const plans = [
       'Suivi des commandes en temps réel',
       'Gestion des tables & statistiques',
     ],
-    href: `${REGISTER_URL}?checkout=pro`,
     featured: true,
+    // Plan pas encore commercialisé : on masque le prix et on désactive
+    // l'inscription tant que la commande à table est en développement.
+    comingSoon: true,
   },
 ];
 ---
@@ -53,9 +53,13 @@ const plans = [
     <div class="price-grid">
       {plans.map((p) => (
         <div class={`price-card reveal${p.featured ? ' pro' : ''}`}>
-          {p.featured && <div class="recommended-badge">Recommandé</div>}
+          {p.comingSoon
+            ? <div class="recommended-badge">Bientôt disponible</div>
+            : p.featured && <div class="recommended-badge">Recommandé</div>}
           <div class="plan">{p.name}</div>
-          <div class="amount">{p.price}<span> {p.period}</span></div>
+          {p.comingSoon
+            ? <div class="amount coming-soon-price">Bientôt</div>
+            : <div class="amount">{p.price}<span> {p.period}</span></div>}
           <div class="tag">{p.tag}</div>
           <ul>
             {p.features.map((f) => (
@@ -65,7 +69,9 @@ const plans = [
               </li>
             ))}
           </ul>
-          <a href={p.href} class="btn btn-primary">Commencer</a>
+          {p.comingSoon
+            ? <span class="btn btn-soon" aria-disabled="true">En cours de développement</span>
+            : <a href={p.href} class="btn btn-primary">Commencer</a>}
         </div>
       ))}
     </div>
