@@ -635,8 +635,26 @@ section { position: relative; }
   gap: 22px;
 }
 @media (max-width: 900px) { .menu-grid { grid-template-columns: 1fr 1fr; } }
+/* Mobile : carrousel horizontal (scroll vers la droite) au lieu de cartes empilées */
 @media (max-width: 620px) {
-  .menu-grid { grid-template-columns: 1fr; max-width: 420px; margin: 0 auto; }
+  .menu-grid {
+    display: flex;
+    grid-template-columns: none;
+    max-width: none;
+    gap: 16px;
+    margin: 0 -28px;
+    padding: 6px 28px 16px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+  .menu-grid::-webkit-scrollbar { display: none; }
+  .menu-card {
+    flex: 0 0 76%;
+    max-width: 300px;
+    scroll-snap-align: start;
+  }
 }
 
 .menu-card {
