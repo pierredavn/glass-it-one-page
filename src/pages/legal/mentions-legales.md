@@ -48,7 +48,7 @@ Toute reproduction, représentation, modification ou exploitation, totale ou par
 
 ## 5. Données personnelles
 
-Le traitement des données personnelles des utilisateurs et de leurs clients finaux est décrit dans la [Politique de confidentialité](/legal/confidentialite) [À COMPLÉTER si ce document n'existe pas encore]. Conformément au Règlement Général sur la Protection des Données (RGPD) et à la loi « Informatique et Libertés », vous disposez d'un droit d'accès, de rectification, d'effacement, de limitation et d'opposition sur vos données, exerçable en écrivant à contact@glass-it.fr.
+Le traitement des données personnelles des utilisateurs et de leurs clients finaux est décrit dans la [Politique de confidentialité](/legal/confidentialite). Conformément au Règlement Général sur la Protection des Données (RGPD) et à la loi « Informatique et Libertés », vous disposez d'un droit d'accès, de rectification, d'effacement, de limitation et d'opposition sur vos données, exerçable en écrivant à contact@glass-it.fr.
 
 ## 6. Cookies
 

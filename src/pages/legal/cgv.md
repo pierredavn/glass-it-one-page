@@ -30,7 +30,7 @@ Le Service propose, à la date des présentes, les offres suivantes :
 
 Le Vendeur bénéficie de la franchise en base de TVA (article 293 B du Code Général des Impôts) : la TVA n'est pas applicable sur les factures émises. Les tarifs indiqués « HT » correspondent donc au montant effectivement facturé au Client, sans majoration de TVA.
 
-Le Vendeur se réserve le droit de modifier ses tarifs à tout moment. Toute modification tarifaire sera communiquée au Client au moins [À COMPLÉTER : ex. 30 jours] avant son entrée en vigueur et ne s'appliquera qu'aux échéances de facturation postérieures à cette entrée en vigueur.
+Le Vendeur se réserve le droit de modifier ses tarifs à tout moment. Toute modification tarifaire sera communiquée au Client par email au moins trente (30) jours avant son entrée en vigueur et ne s'appliquera qu'aux échéances de facturation postérieures à cette entrée en vigueur.
 
 ## 3. Souscription et durée
 
@@ -68,7 +68,7 @@ Le Vendeur ne saurait être tenu responsable des contenus publiés par le Client
 
 ## 9. Données personnelles et sous-traitants
 
-Dans le cadre de l'exécution du contrat, le Vendeur traite les données du Client conformément à sa Politique de confidentialité [À COMPLÉTER si document distinct]. Les principaux sous-traitants intervenant dans la fourniture du Service sont Supabase (hébergement des données et authentification) et Stripe (traitement des paiements).
+Dans le cadre de l'exécution du contrat, le Vendeur traite les données du Client conformément à sa [Politique de confidentialité](/legal/confidentialite). Les principaux sous-traitants intervenant dans la fourniture du Service sont Supabase (hébergement des données et authentification), Stripe (traitement des paiements) et Vercel (hébergement de l'application).
 
 ## 10. Réclamations
 

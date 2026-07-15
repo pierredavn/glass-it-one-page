@@ -86,8 +86,8 @@ D'autres sous-traitants (notamment Stripe et Vercel) peuvent être amenés à tr
 
 ## 8. Durée de conservation
 
-- **Données de compte Utilisateur :** conservées pendant toute la durée de vie du compte, puis supprimées ou anonymisées dans un délai de [À COMPLÉTER : ex. 12 mois] après suppression du compte, sous réserve des obligations légales de conservation (données de facturation conservées 10 ans conformément aux obligations comptables).
-- **Données des Clients finaux (commandes) :** conservées par l'Établissement pour la durée nécessaire au traitement de la commande, puis archivées ou supprimées selon la politique de conservation propre à chaque Établissement, dans la limite de [À COMPLÉTER : ex. 3 ans] à compter de la dernière commande.
+- **Données de compte Utilisateur :** conservées pendant toute la durée de vie du compte, puis supprimées ou anonymisées dans un délai de douze (12) mois après suppression du compte, sous réserve des obligations légales de conservation (données de facturation conservées 10 ans conformément aux obligations comptables).
+- **Données des Clients finaux (commandes) :** conservées par l'Établissement pour la durée nécessaire au traitement de la commande, puis archivées ou supprimées selon la politique de conservation propre à chaque Établissement, dans la limite de trois (3) ans à compter de la dernière commande.
 - **Cookies de session :** durée de la session ou de la connexion persistante (selon la configuration Supabase Auth).
 
 ## 9. Sécurité des données

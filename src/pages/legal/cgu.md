@@ -70,7 +70,7 @@ L'Éditeur se réserve le droit de faire évoluer, modifier ou supprimer des fon
 
 ## 7. Données personnelles
 
-Le traitement des données personnelles collectées via le Service (comptes Utilisateurs, données des clients finaux le cas échéant via la commande à table) est décrit dans la Politique de confidentialité [À COMPLÉTER : lien vers le document si distinct des présentes CGU], conformément au RGPD.
+Le traitement des données personnelles collectées via le Service (comptes Utilisateurs, données des clients finaux le cas échéant via la commande à table) est décrit dans la [Politique de confidentialité](/legal/confidentialite), conformément au RGPD.
 
 ## 8. Responsabilité
 
