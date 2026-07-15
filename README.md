@@ -32,9 +32,20 @@ src/
 │   ├── FinalCTA.astro
 │   ├── Footer.astro
 │   └── Reveal.astro         ← Client-side IntersectionObserver for .reveal
-└── pages/
-    └── index.astro          ← Composes the sections
+├── pages/
+│   ├── index.astro          ← Composes the sections
+│   └── legal/               ← CGU / CGV / mentions légales / confidentialité (Markdown)
+└── layouts/
+    └── LegalLayout.astro    ← Wraps the /legal/* Markdown pages
 ```
+
+## ⚖️ Pages légales
+
+`src/pages/legal/*.md` est la **source unique** des documents juridiques — il n'en existe pas de copie ailleurs. Chaque fichier est du Markdown rendu par `LegalLayout.astro` ; le frontmatter (`layout`, `title`, `description`) est requis, le reste du fichier est le texte publié tel quel.
+
+Pour modifier un document, édite le `.md` : les pages `/legal/cgu`, `/legal/cgv`, `/legal/mentions-legales` et `/legal/confidentialite` suivent, ainsi que les liens du footer.
+
+Les durées de conservation RGPD (12 mois / 3 ans) et le préavis tarifaire (30 jours) sont des **engagements opposables** : ils doivent refléter le comportement réel de l'application.
 
 ## ✏️ Editing content
 

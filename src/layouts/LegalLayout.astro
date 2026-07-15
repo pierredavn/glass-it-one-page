@@ -1,0 +1,31 @@
+---
+// Layout for the /legal/* markdown pages.
+import Layout from './Layout.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+
+interface Props {
+  frontmatter: { title: string; description?: string };
+}
+
+const { frontmatter } = Astro.props;
+---
+
+<Layout title={`${frontmatter.title} · Glass It`} description={frontmatter.description}>
+  <Nav />
+  <main class="legal">
+    <div class="container">
+      <a href="/" class="legal-back">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="19" y1="12" x2="5" y2="12" />
+          <polyline points="12 19 5 12 12 5" />
+        </svg>
+        Retour à l'accueil
+      </a>
+      <article class="prose">
+        <slot />
+      </article>
+    </div>
+  </main>
+  <Footer />
+</Layout>
