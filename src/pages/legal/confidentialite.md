@@ -100,6 +100,8 @@ Le Service utilise uniquement des cookies strictement nécessaires à l'authenti
 
 Aucun cookie de mesure d'audience tiers ou publicitaire n'est déposé. Si un tel outil devait être ajouté, la présente politique serait mise à jour et votre consentement recueilli préalablement à tout dépôt.
 
+Le détail des traceurs utilisés, leur durée de conservation et les modalités de gestion de votre choix figurent dans notre [Politique de cookies](/legal/cookies).
+
 ## 11. Droits des personnes concernées
 
 Conformément au RGPD, toute personne concernée dispose des droits suivants sur ses données :

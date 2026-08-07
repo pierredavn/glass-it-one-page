@@ -1,0 +1,99 @@
+---
+/**
+ * Bandeau de consentement aux cookies.
+ *
+ * Monté une fois dans Layout.astro, donc présent sur toutes les pages.
+ * Le choix est stocké dans localStorage (`glassit-cookie-consent`) pour 6 mois.
+ *
+ * Le bandeau part masqué (`hidden`) et n'est révélé par le script que si aucun
+ * choix valide n'est enregistré — pas de flash pour les visiteurs récurrents.
+ *
+ * Réouverture : n'importe quel élément portant `data-cookie-settings`
+ * (ex. le lien « Cookies » du footer) réaffiche le bandeau.
+ *
+ * Une fois le choix fait, un CustomEvent `glassit:consent` est émis sur
+ * `document` avec `{ detail: { value: 'accepted' | 'refused' } }` — point
+ * d'accroche pour brancher un outil de mesure d'audience le jour venu.
+ */
+---
+
+<div
+  id="cookie-banner"
+  class="cookie-banner glass"
+  role="dialog"
+  aria-modal="false"
+  aria-labelledby="cookie-banner-title"
+  hidden
+>
+  <div class="cookie-banner-text">
+    <div id="cookie-banner-title" class="cookie-banner-title">On respecte votre vie privée</div>
+    <p>
+      Glass It n'utilise que des cookies nécessaires à son fonctionnement — ni publicité, ni
+      profilage. <a href="/legal/cookies">En savoir plus</a>
+    </p>
+  </div>
+  <div class="cookie-banner-actions">
+    <button type="button" class="btn btn-glass" data-cookie-action="refused">Refuser</button>
+    <button type="button" class="btn btn-primary" data-cookie-action="accepted">Accepter</button>
+  </div>
+</div>
+
+<script>
+  const KEY = 'glassit-cookie-consent';
+  const SIX_MONTHS = 1000 * 60 * 60 * 24 * 182;
+
+  const banner = document.getElementById('cookie-banner');
+  if (banner) {
+    /** Lecture tolérante : Safari en navigation privée peut lever sur localStorage. */
+    const readConsent = () => {
+      try {
+        const raw = localStorage.getItem(KEY);
+        if (!raw) return null;
+        const parsed = JSON.parse(raw);
+        if (!parsed?.value || !parsed?.date) return null;
+        // Le consentement expire au bout de 6 mois (recommandation CNIL : 6 à 13 mois).
+        if (Date.now() - new Date(parsed.date).getTime() > SIX_MONTHS) return null;
+        return parsed.value;
+      } catch {
+        return null;
+      }
+    };
+
+    const open = () => {
+      banner.hidden = false;
+      // Laisse un frame au navigateur avant de déclencher la transition d'entrée.
+      requestAnimationFrame(() => banner.classList.add('in'));
+    };
+
+    const close = () => {
+      banner.classList.remove('in');
+      // Timeout plutôt que `transitionend` : celui-ci ne se déclenche pas
+      // quand les animations sont désactivées (prefers-reduced-motion).
+      setTimeout(() => { banner.hidden = true; }, 400);
+    };
+
+    const choose = (value) => {
+      try {
+        localStorage.setItem(KEY, JSON.stringify({ value, date: new Date().toISOString() }));
+      } catch {
+        // Stockage indisponible : on ferme quand même, le bandeau reviendra.
+      }
+      document.dispatchEvent(new CustomEvent('glassit:consent', { detail: { value } }));
+      close();
+    };
+
+    banner.querySelectorAll('[data-cookie-action]').forEach((btn) => {
+      btn.addEventListener('click', () => choose(btn.getAttribute('data-cookie-action')));
+    });
+
+    // Lien « Cookies » du footer (ou tout autre déclencheur) → réaffiche le bandeau.
+    document.querySelectorAll('[data-cookie-settings]').forEach((el) => {
+      el.addEventListener('click', (e) => {
+        e.preventDefault();
+        open();
+      });
+    });
+
+    if (!readConsent()) open();
+  }
+</script>
