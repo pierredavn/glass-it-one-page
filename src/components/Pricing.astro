@@ -1,5 +1,5 @@
 ---
-// 6. Pricing — Premium & Pro
+// 6. Pricing — Free, Premium & Multi-restaurants
 import { REGISTER_URL } from '../urls';
 
 const checkIcon = (color: string) => `
@@ -8,9 +8,41 @@ const checkIcon = (color: string) => `
   </svg>
 `;
 
+// Ce qui n'est pas inclus dans une formule : on l'affiche plutôt que de le
+// passer sous silence, avec une croix pour ne pas le confondre avec un acquis.
+const crossIcon = (color: string) => `
+  <svg viewBox="0 0 24 24" fill="none" stroke="${color}" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+    <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+  </svg>
+`;
+
 // Le paramètre ?checkout=... déclenche le checkout Stripe du plan choisi
-// juste après l'inscription sur l'app.
+// juste après l'inscription sur l'app. Le plan Free n'en a pas : rien à payer.
 const plans = [
+  {
+    name: 'Free',
+    price: '0€',
+    period: 'pour toujours',
+    tag: 'Votre carte en ligne, en version basique.',
+    features: [
+      'Articles illimités',
+      'Catégories illimitées',
+      'Nom et prix de chaque article',
+      'Photo de couverture du menu',
+    ],
+    // Espaces insecables dans les guillemets pour eviter un « » orphelin en fin de ligne.
+    limits: [
+      'Pas de photo sur les articles',
+      'Pas de personnalisation des couleurs',
+      'Mention « Propulsé par Glass It » en bas du menu',
+      'Logo Glass It à la place du vôtre',
+    ],
+    href: REGISTER_URL,
+    cta: 'Créer mon menu gratuit',
+    featured: false,
+    // Bouton discret : l'offre payante reste l'appel à l'action principal.
+    subtle: true,
+  },
   {
     name: 'Premium',
     price: '10€',
@@ -47,7 +79,7 @@ const plans = [
     <div class="section-head center reveal">
       <span class="eyebrow">Tarifs</span>
       <h2 class="section-title">Simple, transparent, <i>sans surprise.</i></h2>
-      <p class="section-sub">Deux formules, sans engagement. Changez ou résiliez quand vous voulez.</p>
+      <p class="section-sub">Commencez gratuitement, sans engagement. Changez ou résiliez quand vous voulez.</p>
     </div>
 
     <div class="price-grid">
@@ -68,10 +100,16 @@ const plans = [
                 {f}
               </li>
             ))}
+            {p.limits?.map((f) => (
+              <li class="limit">
+                <Fragment set:html={crossIcon('#B0AAA0')} />
+                {f}
+              </li>
+            ))}
           </ul>
           {p.comingSoon
             ? <span class="btn btn-soon" aria-disabled="true">En cours de développement</span>
-            : <a href={p.href} class="btn btn-primary">Commencer</a>}
+            : <a href={p.href} class={`btn ${p.subtle ? 'btn-outline' : 'btn-primary'}`}>{p.cta ?? 'Commencer'}</a>}
         </div>
       ))}
     </div>

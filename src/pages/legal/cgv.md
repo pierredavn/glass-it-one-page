@@ -6,7 +6,7 @@ description: "Les conditions de souscription aux offres payantes de Glass It."
 
 # Conditions Générales de Vente (CGV)
 
-**Dernière mise à jour : 15 juillet 2026**
+**Dernière mise à jour : 7 août 2026**
 
 ## 1. Objet et champ d'application
 
@@ -24,9 +24,9 @@ Le Service propose, à la date des présentes, les offres suivantes :
 
 | Plan | Tarif | Fonctionnalités principales |
 |---|---|---|
-| **Free** | Gratuit | Accès limité (état par défaut, sans abonnement) |
-| **Premium** | 10 € HT / mois | Menu numérique, personnalisation, QR code |
-| **Pro** | 15 € HT / mois | Toutes les fonctionnalités Premium + commande à table, suivi des commandes, statistiques |
+| **Free** | Gratuit | Un menu numérique en version basique : articles et catégories illimités, nom et prix des articles, photo de couverture. Sans photo sur les articles, sans personnalisation des couleurs, avec le logo et la mention « Propulsé par Glass It » affichés sur le menu |
+| **Premium** | 10 € HT / mois | Un menu numérique, QR code dédié, personnalisation (couleurs, logo), mises à jour en temps réel |
+| **Multi-restaurants** | Tarif communiqué au lancement | Toutes les fonctionnalités Premium + gestion de plusieurs restaurants, plusieurs collaborateurs et gestion des accès. Offre en cours de développement, non commercialisée à la date des présentes |
 
 Le Vendeur bénéficie de la franchise en base de TVA (article 293 B du Code Général des Impôts) : la TVA n'est pas applicable sur les factures émises. Les tarifs indiqués « HT » correspondent donc au montant effectivement facturé au Client, sans majoration de TVA.
 
@@ -49,6 +49,8 @@ L'abonnement est facturé mensuellement, par avance, à la même date que la sou
 Le Client peut à tout moment gérer, modifier ou résilier son abonnement directement depuis le portail de facturation accessible depuis son tableau de bord (portail client Stripe).
 
 La résiliation prend effet à la fin de la période de facturation en cours : le Client conserve l'accès aux fonctionnalités payantes jusqu'à cette date, sans reconduction ni prélèvement ultérieur. **Aucun remboursement au prorata** de la période en cours n'est effectué en cas de résiliation anticipée, sauf disposition légale contraire ou décision commerciale expresse du Vendeur.
+
+À l'échéance, le compte bascule sur l'offre **Free**, qui est l'état par défaut du Service : le menu du Client reste en ligne, dans les limites décrites à l'article 2. Les contenus et réglages propres aux offres payantes (photos des articles, personnalisation des couleurs et du logo) sont conservés mais cessent d'être affichés, et redeviennent actifs en cas de nouvelle souscription.
 
 ## 6. Absence de droit de rétractation
 
