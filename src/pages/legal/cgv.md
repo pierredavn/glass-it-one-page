@@ -24,7 +24,7 @@ Le Service propose, à la date des présentes, les offres suivantes :
 
 | Plan | Tarif | Fonctionnalités principales |
 |---|---|---|
-| **Free** | Gratuit | Un menu numérique en version basique : articles et catégories illimités, nom et prix des articles, photo de couverture. Sans photo sur les articles, sans personnalisation des couleurs, avec le logo et la mention « Propulsé par Glass It » affichés sur le menu |
+| **Free** | Gratuit | Un menu numérique en version basique : QR code, articles et catégories illimités, nom et prix des articles, photo de couverture. Sans photo sur les articles, sans personnalisation des couleurs, avec le logo et la mention « Propulsé par Glass It » affichés sur le menu |
 | **Premium** | 10 € HT / mois | Un menu numérique, QR code dédié, personnalisation (couleurs, logo), mises à jour en temps réel |
 | **Multi-restaurants** | Tarif communiqué au lancement | Toutes les fonctionnalités Premium + gestion de plusieurs restaurants, plusieurs collaborateurs et gestion des accès. Offre en cours de développement, non commercialisée à la date des présentes |
 
