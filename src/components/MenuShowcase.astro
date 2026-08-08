@@ -24,18 +24,23 @@ import { showcaseMenus } from '../data/menus';
           target="_blank"
           rel="noopener"
         >
-          <div class="cover" style={`background-image:url('${menu.image}')`}></div>
+          <div class="cover" style={`background-image:url('${menu.hero}')`}></div>
           <span class="badge"><span class="live"></span>Ouvert</span>
           <div class="info">
-            <div>
-              <h3>
-                {menu.name}
-                {menu.nameItalic && <> <i>{menu.nameItalic}</i></>}
-              </h3>
-              <div class="meta">
-                <span>{menu.city}</span>
-                <span class="dot"></span>
-                <span>{menu.cuisine}</span>
+            <div class="who">
+              {menu.avatar && (
+                <img class="avatar" src={menu.avatar} alt="" loading="lazy" decoding="async" width="44" height="44" />
+              )}
+              <div>
+                <h3>
+                  {menu.name}
+                  {menu.nameItalic && <> <i>{menu.nameItalic}</i></>}
+                </h3>
+                <div class="meta">
+                  <span>{menu.city}</span>
+                  <span class="dot"></span>
+                  <span>{menu.cuisine}</span>
+                </div>
               </div>
             </div>
             <span class="go" aria-hidden="true">

@@ -16,8 +16,10 @@ export interface ShowcaseMenu {
   city: string;
   /** Short cuisine descriptor. */
   cuisine: string;
-  /** Cover photo URL (Unsplash or your own). */
-  image: string;
+  /** Photo héros : l'image plein cadre de la carte (et du menu). ~900px de large. */
+  hero: string;
+  /** Photo de profil (logo / façade), affichée en pastille ronde. Carrée, ~160px. Optionnelle. */
+  avatar?: string;
   /** Where clicking the card sends the user. */
   href: string;
 }
@@ -28,7 +30,8 @@ export const showcaseMenus: ShowcaseMenu[] = [
     nameItalic: 'Arts',
     city: 'Lyon 2ᵉ',
     cuisine: 'Bistrot',
-    image: 'https://images.unsplash.com/photo-1559339352-11d035aa65de?w=900&q=80',
+    hero: 'https://images.unsplash.com/photo-1559339352-11d035aa65de?w=900&q=80',
+    avatar: 'https://images.unsplash.com/photo-1521017432531-fbd92d768814?w=160&h=160&fit=crop&q=80',
     href: 'https://menu.glass-it.fr/cafe-des-arts',
   },
   {
@@ -36,7 +39,8 @@ export const showcaseMenus: ShowcaseMenu[] = [
     nameItalic: 'Joséphine',
     city: 'Paris 11ᵉ',
     cuisine: 'Brasserie',
-    image: 'https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=900&q=80',
+    hero: 'https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=900&q=80',
+    avatar: 'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=160&h=160&fit=crop&q=80',
     href: 'https://menu.glass-it.fr/brasserie-josephine',
   },
   {
@@ -44,7 +48,8 @@ export const showcaseMenus: ShowcaseMenu[] = [
     nameItalic: '42',
     city: 'Marseille',
     cuisine: 'Cocktails',
-    image: 'https://images.unsplash.com/photo-1467003909585-2f8a72700288?w=900&q=80',
+    hero: 'https://images.unsplash.com/photo-1467003909585-2f8a72700288?w=900&q=80',
+    avatar: 'https://images.unsplash.com/photo-1470337458703-46ad1756a187?w=160&h=160&fit=crop&q=80',
     href: 'https://menu.glass-it.fr/rooftop-42',
   },
   {
@@ -52,7 +57,8 @@ export const showcaseMenus: ShowcaseMenu[] = [
     nameItalic: 'Atelier',
     city: 'Bordeaux',
     cuisine: 'Gastronomique',
-    image: 'https://images.unsplash.com/photo-1552566626-52f8b828add9?w=900&q=80',
+    hero: 'https://images.unsplash.com/photo-1552566626-52f8b828add9?w=900&q=80',
+    avatar: 'https://images.unsplash.com/photo-1559339352-11d035aa65de?w=160&h=160&fit=crop&q=80',
     href: 'https://menu.glass-it.fr/latelier',
   },
   {
@@ -60,7 +66,8 @@ export const showcaseMenus: ShowcaseMenu[] = [
     nameItalic: 'Miroir',
     city: 'Nantes',
     cuisine: 'Café · Brunch',
-    image: 'https://images.unsplash.com/photo-1554118811-1e0d58224f24?w=900&q=80',
+    hero: 'https://images.unsplash.com/photo-1554118811-1e0d58224f24?w=900&q=80',
+    avatar: 'https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=160&h=160&fit=crop&q=80',
     href: 'https://menu.glass-it.fr/cafe-miroir',
   },
   {
@@ -68,7 +75,8 @@ export const showcaseMenus: ShowcaseMenu[] = [
     nameItalic: 'Comptoir',
     city: 'Strasbourg',
     cuisine: 'Bar à vins',
-    image: 'https://images.unsplash.com/photo-1508424757105-b6d5ad9329d0?w=900&q=80',
+    hero: 'https://images.unsplash.com/photo-1508424757105-b6d5ad9329d0?w=900&q=80',
+    avatar: 'https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?w=160&h=160&fit=crop&q=80',
     href: 'https://menu.glass-it.fr/le-comptoir',
   },
 ];

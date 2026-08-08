@@ -689,6 +689,9 @@ section { position: relative; }
     max-width: 300px;
     scroll-snap-align: start;
   }
+  /* Cartes plus étroites : pastille de profil réduite pour garder le nom sur une ligne */
+  .menu-card .info .avatar { width: 36px; height: 36px; }
+  .menu-card .info .who { gap: 9px; }
 }
 
 .menu-card {
@@ -762,6 +765,21 @@ section { position: relative; }
   justify-content: space-between;
   gap: 12px;
   color: var(--ink);
+}
+.menu-card .info .who {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  min-width: 0;
+}
+.menu-card .info .avatar {
+  flex-shrink: 0;
+  width: 44px; height: 44px;
+  border-radius: 50%;
+  object-fit: cover;
+  background: rgba(255, 255, 255, 0.5);
+  border: 2px solid rgba(255, 255, 255, 0.85);
+  box-shadow: 0 6px 16px -6px rgba(0, 0, 0, 0.35);
 }
 .menu-card .info h3 {
   font-family: 'Playfair Display', serif;
