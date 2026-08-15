@@ -3,6 +3,17 @@
 // Data lives in src/data/menus.ts — edit there to add / reorder restaurants.
 
 import { showcaseMenus } from '../data/menus';
+
+// Les cartes vivent tout en bas de la page : on les sert en <img loading="lazy">
+// plutôt qu'en background CSS, sinon les 6 photos sont téléchargées d'emblée et
+// entrent en concurrence avec le héros. `auto=format` → AVIF/WebP côté Unsplash.
+const coverWidths = [320, 480, 640, 800];
+const coverSrc = (photo: string, w: number) =>
+  `${photo}?auto=format&fit=crop&q=75&w=${w}&h=${Math.round((w * 4) / 3)}`;
+const coverSizes =
+  '(max-width: 620px) min(76vw, 300px), (max-width: 900px) calc((100vw - 78px) / 2), 360px';
+const avatarSrc = (photo: string) =>
+  `${photo}?auto=format&fit=crop&q=75&w=88&h=88`;
 ---
 
 <section class="showcase section-pad" id="stories">
@@ -24,12 +35,22 @@ import { showcaseMenus } from '../data/menus';
           target="_blank"
           rel="noopener"
         >
-          <div class="cover" style={`background-image:url('${menu.hero}')`}></div>
+          <img
+            class="cover"
+            src={coverSrc(menu.hero, 480)}
+            srcset={coverWidths.map((w) => `${coverSrc(menu.hero, w)} ${w}w`).join(', ')}
+            sizes={coverSizes}
+            alt=""
+            width="480"
+            height="640"
+            loading="lazy"
+            decoding="async"
+          />
           <span class="badge"><span class="live"></span>Ouvert</span>
           <div class="info">
             <div class="who">
               {menu.avatar && (
-                <img class="avatar" src={menu.avatar} alt="" loading="lazy" decoding="async" width="44" height="44" />
+                <img class="avatar" src={avatarSrc(menu.avatar)} alt="" loading="lazy" decoding="async" width="44" height="44" />
               )}
               <div>
                 <h3>

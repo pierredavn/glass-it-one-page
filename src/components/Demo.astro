@@ -1,24 +1,27 @@
 ---
 // 5. Demo — dark section with iPhone-style menu preview
 
+// Vignettes affichées en 60×60 : on demande 120px pour les écrans 2×, pas plus.
+const thumb = (photo: string) => `${photo}?auto=format&fit=crop&q=75&w=120&h=120`;
+
 const dishes = [
   {
     name: 'Burrata des Pouilles',
     price: '14€',
     desc: "Tomates anciennes, basilic, huile d'olive de Toscane.",
-    img: 'https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=200&q=80',
+    img: thumb('https://images.unsplash.com/photo-1565299624946-b28f40a0ae38'),
   },
   {
     name: 'Risotto aux cèpes',
     price: '22€',
     desc: 'Arborio Carnaroli, cèpes frais, parmesan 24 mois.',
-    img: 'https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=200&q=80',
+    img: thumb('https://images.unsplash.com/photo-1546069901-ba9599a7e63c'),
   },
   {
     name: 'Tartare au couteau',
     price: '19€',
     desc: 'Bœuf Black Angus, câpres, échalotes, jaune confit.',
-    img: 'https://images.unsplash.com/photo-1565958011703-44f9829ba187?w=200&q=80',
+    img: thumb('https://images.unsplash.com/photo-1565958011703-44f9829ba187'),
   },
 ];
 ---
@@ -74,10 +77,12 @@ const dishes = [
             <div class="phone-items">
               {dishes.map((d) => (
                 <div class="menu-item">
-                  <div class="thumb" style={`background-image:url('${d.img}')`}></div>
+                  <img class="thumb" src={d.img} alt="" width="60" height="60" loading="lazy" decoding="async" />
                   <div class="info">
                     <div class="row1">
-                      <h4>{d.name}</h4>
+                      {/* Maquette décorative : un <p> et non un titre, pour ne pas
+                          casser la hiérarchie h2 → h3 du document. */}
+                      <p class="dish-name">{d.name}</p>
                       <span class="price">{d.price}</span>
                     </div>
                     <p>{d.desc}</p>

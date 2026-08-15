@@ -16,7 +16,7 @@ npm run preview
 ```text
 src/
 ├── layouts/
-│   └── Layout.astro         ← <html><head>, Google Fonts, global styles
+│   └── Layout.astro         ← <html><head>, CSP, preload des polices, meta social
 ├── styles/
 │   └── global.css           ← All design tokens + utility + component styles
 ├── data/
@@ -55,7 +55,8 @@ Les durées de conservation RGPD (12 mois / 3 ans) et le préavis tarifaire (30 
 
 ## 🎨 Design system
 
-- Typography: **Playfair Display** (titles, italic accents) + **DM Sans** (body / UI). Loaded via Google Fonts in `Layout.astro`.
+- Typography: **Playfair Display** (titles, italic accents) + **DM Sans** (body / UI). Self-hosted from `public/fonts/` (SIL OFL) — `@font-face` at the top of `global.css`, the two critical files preloaded in `Layout.astro`. Nothing is fetched from Google.
+- Photos: all served from Unsplash with `auto=format` (AVIF/WebP) and explicitly sized. Anything below the fold is an `<img loading="lazy">` rather than a CSS background, so it stays off the initial load.
 - Surfaces: Liquid-Glass — `backdrop-filter: blur(24px) saturate(180%)` on top of warm-white (`#F8F7F4`) and photographic backgrounds.
 - Accent: pure ink `#1A1A1A` for CTAs and emphasis.
 

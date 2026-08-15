@@ -1,17 +1,43 @@
 ---
 // 1. Hero — full-bleed photo, glass pill, headline, CTAs, floating glass cards
 import { REGISTER_URL } from '../urls';
+
+// Photo plein cadre du héros. Servie en <img> (et non en background CSS) pour que
+// le préchargeur HTML la découvre immédiatement, avec srcset pour ne pas envoyer
+// 1900px de large à un téléphone. `auto=format` laisse Unsplash servir de l'AVIF/WebP.
+const HERO_PHOTO = 'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4';
+// q=55 : l'image est floutée à 4px puis assombrie par le voile, la compression
+// ne se voit pas — Lighthouse chiffrait 44 Ko de gaspillage à q=70.
+const heroSrc = (w: number) => `${HERO_PHOTO}?auto=format&fit=crop&q=55&w=${w}`;
+const heroWidths = [640, 800, 960, 1280, 1600, 1920];
+
+// L'image est floutée à 4px et couverte d'un voile : la pleine densité de
+// l'écran n'apporte rien de visible. On sous-déclare `sizes` sur mobile pour
+// que le navigateur choisisse un cran plus bas (960px au lieu de 1280px sur un
+// téléphone en DPR 3, soit ~60 ko de moins sur le chemin critique du LCP).
+const heroSizes = '(max-width: 900px) 70vw, 100vw';
 ---
 
 <section class="hero" data-screen-label="01 Hero">
-  <div class="hero-bg" aria-hidden="true"></div>
+  <img
+    class="hero-bg"
+    src={heroSrc(1280)}
+    srcset={heroWidths.map((w) => `${heroSrc(w)} ${w}w`).join(', ')}
+    sizes={heroSizes}
+    alt=""
+    aria-hidden="true"
+    width="1280"
+    height="853"
+    fetchpriority="high"
+    decoding="async"
+  />
   <div class="hero-veil" aria-hidden="true"></div>
 
   <div class="hero-floats" aria-hidden="true">
     <div class="float-card fc-1">
       <div
         class="swatch"
-        style="background-image:url('https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=200&q=80')"
+        style="background-image:url('https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&q=75&w=112&h=112')"
       ></div>
       <div>
         <div style="font-weight:600">Burrata · 14€</div>
